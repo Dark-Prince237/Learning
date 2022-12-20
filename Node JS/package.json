@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "validator": "^13.7.0"
+  },
+  "name": "ras",
+  "version": "2.0.0",
+  "description": "red",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rashiud",
+  "license": "ISC"
+}
