@@ -1,0 +1,103 @@
+Mobile OTP based authentication and authorization API using Nodejs and Mongodb
+
+Workflow of Authentication and Authorization in our API
+-User will register their account
+-User will login using mobile number
+-User will get 6 digit OTP on provided mobile number
+-User will verify their OTP
+-On success verification user will get jwt token which they can send on further request as a identity
+-we will add admin role to user if their mobile number will match with env variable mobile number other wise by default they will be normal user
+-admin user can access all endpoints
+-normal user can access all endpoints except admin related endpoints
+
+
+library we will use
+Dependencies
+1) Express Js
+
+Express is a back end framework for Node.js.It is designed for building web applications and APIs. It has been called the de facto standard server framework for Node.js
+
+2) Mongoose
+
+Mongoose is a Database ODM for Nodejs. It provide schema based api to model our mongodb schema.It is famous in world of Nodejs and Mongodb.
+
+3) Jsonwebtoken
+This package provide api to generate JWT token and verify those token using provided secrets key.
+
+6) cors
+
+cors is a middleware which helps to enable CORS (Cross Origin Resource Sharing). Our api will run on port 5000 and suppose we have client in react which run on port 3000 then CORS will not allow our react application to talk with nodejs api so we will configure cors in backend api
+
+7) dotenv
+
+Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env .
+
+8) fast-two-sms
+
+This package will help to send otp to mobile number using sms.
+
+
+Dev Dependencies
+1) Nodemon
+
+We do not want after every changes to stop our nodejs server and reopen it is annoying and anti dev pattern so we will use nodemon library to automatically restart our server on changes to code.
+
+2) Morgan
+
+
+
+
+API endpoints
+---------------
+
+
+1) /api/auth/register
+
+method POST
+body {
+     phone : String
+     name : String
+}
+
+
+
+2) /api/auth/login_with_phone
+
+method POST
+body {
+     phone : String
+}
+
+
+3) /api/auth/verify_otp
+
+method POST
+body {
+     otp : String
+     userId : String
+}
+
+
+4) /api/auth/me
+
+method GET
+headers {
+     Authorization : Bearer jwt_token
+}
+access for both ADMIN and USER role
+
+5) /api/auth/admin
+
+method GET
+headers {
+    Authorization : Bearer jwt_token
+}
+
+access for only ADMIN role
+
+
+
+
+URI
+--------
+Each REST API resource can be accessed by using a Uniform Resource Identifier (URI). The URI must contain the correct connection information to successfully call the API. The connection information consists of the host name where the web management service is running, and the port number that the service is using.

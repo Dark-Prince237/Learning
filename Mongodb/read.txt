@@ -1,0 +1,25 @@
+Mongodb
+-----------------------------------------
+Introduction
+
+SQL - relational Database - tables - query databse sql
+mongodb - Document Database - Documents/ -query databse bson
+
+Bson - Binary Json - faster than Json - more spcae consumed than json - storage of data(json -transmission of data) 
+
+
+sql - tables - rows -columns
+mongodb - collections(array of object) - Document - fields
+------------------------------------------------------
+Installation
+
+------------------------------
+
+show dbs -show Databases
+use database_name - if present he will use it otherwise it will create it.
+
+db.database_name.insertOne({name:"rashid",age:"23"}); -insert the Document 
+
+db - show current db  
+
+

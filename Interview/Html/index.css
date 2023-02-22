@@ -1,0 +1,19 @@
+a:link
+{
+    color:limegreen
+}
+
+a:hover
+{
+    color:red
+}
+
+a:active
+{
+    color:pink
+}
+
+a:visited
+{
+    color:blueviolet
+}

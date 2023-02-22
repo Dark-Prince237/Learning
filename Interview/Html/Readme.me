@@ -1,0 +1,193 @@
+Medium Topics 
+----------------
+map
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+</map>
+
+favicon
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+
+ <colgroup>
+            <col style="background-color:red">
+            <col style="background-color:greenyellow">
+            <col style="background-color:skyblue">
+        </colgroup>
+
+semantic elements
+figure
+figcaption
+
+<details>
+  <summary>Epcot Center</summary>
+  <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+</details>
+
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+<meta charset="UTF-8">
+
+<input type="text" id="country_code" name="country_code" pattern="[1-9]{2}" 
+title="Three letter country code">
+
+<input type="submit" formtarget="_blank" value="Submit to a new window/tab">
+his attribute overrides the target attribute of the <form> element.
+
+------------js-------------------------------
+function clickHandler()
+{
+    window.print() / print()
+}
+
+The let keyword was introduced in ES6 (2015).
+
+Variables defined with let cannot be Redeclared.
+
+Variables defined with let must be Declared before use.
+
+Variables defined with let have Block Scope.
+
+-----
+this keyword -> current object
+const student=
+{
+    fname:"rashid",
+    lname:"iqbal",
+    age:12,
+    fullName:function (){
+        fname="sajid";
+        lname="khan"
+        return fname+" "+lname //sajid khan
+        return this.fname+" "+this.lname //rashid iqbal
+    }
+
+
+}
+
+
+console.log(student.fullName());  
+
+---------------------------------
+//events
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script>
+      function clickHandler (event){
+       event.target.innerHTML = "hello this is rashid";
+      };
+    </script>
+  </head>
+  <body>
+    <h2>JavaScript HTML Events</h2>
+
+    <button onclick="clickHandler(event)">The time is?</button>
+   
+    <script src="a.js"></script>
+  </body>
+</html>
+---------------------------
+forEach
+a=[21,"name",34];
+let total=""
+
+a.forEach(num);
+
+document.getElementById("demo").innerHTML=total
+
+function num(x)
+{
+    total+=" "+x
+}
+----------------------
+map
+const a=[11,22,33,44]
+
+function double(num)
+{
+    return num*3
+}
+
+const b=a.map(double)
+console.log(b);
+-----------------------
+filter
+const a=[11,22,33,44]
+
+function double(num)
+{
+    return num>23
+}
+
+const b=a.filter(double)
+console.log(b);
+-------------------------
+reduce
+const a=[11,22,33,44]
+
+function double(num,num2)
+{
+    return num+num2
+}
+
+const b=a.reduce(double)
+console.log(b); 
+
+ ---------------------------
+ this
+ call()
+ apply()
+ bind()
+
+const person={
+    
+    fullName:function(city1,city2){
+        return this.firstName+" "+this.lastName+" "+city1+" "+city2
+    }
+};
+
+const person1={
+    firstName:"rashid",
+    lastName:"iqbal"
+}
+
+const person2={
+    firstName:"sajid",
+    lastName:"khan"
+}
+person.fullName.call(person1,"patna","delhi")
+person.fullName.apply(person2,["patna","delhi"])
+const bindPerson=person.fullName.bind(person1,"patna","delhi");
+
+console.log(bindPerson())
+
+Use call() when you want to invoke a function immediately with a specific this value
+ and a list of arguments that you specify individually.
+
+Use apply() when you want to invoke a function immediately with a specific this
+ value and a list of arguments that you specify as an array.
+
+Use bind() when you want to create a new function with a specific this value,
+ without invoking the function immediately. 
+ You can then invoke the new function later with the arguments that you specify.
+------------------------------------------------------------
+arrow function
+-------------------
+closure
+----------------------
+accessor 
+getter
+setter 
+iterables
+Map 
+set

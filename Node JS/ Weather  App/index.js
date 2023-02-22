@@ -1,6 +1,5 @@
 // importing  a server http
 const http=require("http");
-
 // to reading the file
 const fs=require("fs");
 
@@ -30,7 +29,8 @@ const replaceVal=(tempVal,orgVal)=>
    
 }
 
-const city="jammu";
+
+const city="spain";
 
 
 // creating a server using http
@@ -39,7 +39,7 @@ const server=http.createServer((request,response)=>
 {
 
     // if url=/ then go on
-    if(request.url=="/")
+    if(request.url=="/d")
     {
 
         // byy using requests package ,request the API of weather.
@@ -77,9 +77,9 @@ const server=http.createServer((request,response)=>
 
     }
 
-    else if(request.url=="/patna")
+    else if(request.url=="/")
     {
-        requests(`https://api.openweathermap.org/data/2.5/weather?q=patna&appid=7c855051f72240dd56381a4ce55055d5&units=metric`)
+        requests(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7c855051f72240dd56381a4ce55055d5&units=metric`)
 
         .on('data', (chunk)=>{
             const objData=JSON.parse(chunk); 
@@ -87,8 +87,8 @@ const server=http.createServer((request,response)=>
             const arrData=[objData];
             // console.log(arrData);
          
-            // const realTimedata=arrData.map((val)=>replaceVal(homeFile,val)) .join("");
-            const realTimedata=replaceVal(homeFile,objData);
+            const realTimedata=arrData.map((val)=>replaceVal(homeFile,val)) .join("");
+            // const realTimedata=replaceVal(homeFile,objData);
            
             response.write(realTimedata);
             response.end();
